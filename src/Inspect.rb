@@ -75,7 +75,33 @@ class Inizianda4
     
 end
 
+class IniziandaP
+  
+    def initialize(a, b)
+        @varUno = a
+        @varDue = b
+    end
+    
+    attr_reader :varUno
 
+end
+
+class Inizianda5
+  
+    attr_accessor :varUno, :varDue
+  
+    def initialize(a, b)
+      @varUno = a
+      @varDue = b
+    end
+    
+    def Inizianda5.create(a, b)
+      Inizianda5.new(a, b)
+    end
+   
+end
+
+# Test
 i = Inizianda4.new(15, 20)
 puts("Oggetto i > " + i.class.to_s+ " "+i.inspect)
 a = i.clone
@@ -87,3 +113,11 @@ puts("i.varUno = " + i.varUno.to_s)
 i.varDue = 25
 puts("i.varDue = " + i.varDue.to_s)
 
+proibit = Inizianda5.new(10,10)
+varUno = proibit.instance_variable_get(:@varDue)
+proibit.instance_variable_set(:@varUno, 20)
+puts("proibit.varDue = " + varUno.to_s)
+puts("proibit.varUno = " + proibit.varUno.to_s)
+
+nv = Inizianda5.create(10,10)
+puts("Creazione con metodo statico: " +  nv.varUno.to_s)
