@@ -1,4 +1,4 @@
-print "Immettere un raggio: "
+print 'Immettere un raggio: '
 raggio_stringa = gets
 raggio = raggio_stringa.to_i
 area = raggio * raggio * Math::PI
